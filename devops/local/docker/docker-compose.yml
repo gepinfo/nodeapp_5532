@@ -164,6 +164,7 @@ services:
       - securitymanager
       - systemcredentialmanager
       - nodefeaure
+      - systementry
     
     networks:
       - nodeapp_5532_net
@@ -251,6 +252,26 @@ services:
     build: ../../../application/services/custom_services/nodefeaure
     image: nodefeaure-5532
     container_name: nodefeaure-5532
+    ports:
+      - 8018:8018
+    env_file: .env
+    depends_on:
+      - mongo
+    networks:
+      - nodeapp_5532_net
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        fluentd-async-connect: "true"
+        tag: fluent
+    mem_limit: 300m
+    mem_reservation: 150m
+    cpus: 0.2
+  systementry:
+    build: ../../../application/services/custom_services/systementry
+    image: systementry-5532
+    container_name: systementry-5532
     ports:
       - 8016:8016
     env_file: .env
