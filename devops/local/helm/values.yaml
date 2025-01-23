@@ -51,17 +51,17 @@ service:
     type: NodePort
     port: 8080
     targetPort: 8080
-  nodefeaure: 
-    name: nodefeaure
-    type: NodePort
-    port: 8018
-    targetPort: 8018
-
   systementry: 
     name: systementry
     type: NodePort
-    port: 8016
-    targetPort: 8016
+    port: 8019
+    targetPort: 8019
+
+  nodefeaure: 
+    name: nodefeaure
+    type: NodePort
+    port: 8020
+    targetPort: 8020
 
 
 deployment:
@@ -88,13 +88,13 @@ deployment:
   desktop:
      name: desktop
      image: geppettotest/nodeapp-desktop:1.0
-  nodefeaure: 
-    name: nodefeaure
-    image: geppettotest/nodeapp-nodefeaure:1.0
-
   systementry: 
     name: systementry
     image: geppettotest/nodeapp-systementry:1.0
+
+  nodefeaure: 
+    name: nodefeaure
+    image: geppettotest/nodeapp-nodefeaure:1.0
 
   camundapod:
      name: camundapod
