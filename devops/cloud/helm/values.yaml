@@ -57,14 +57,14 @@ service:
   systementry: 
     name: systementry
     type: NodePort
-    port: 8019
-    targetPort: 8019
+    port: 8021
+    targetPort: 8021
 
   nodefeaure: 
     name: nodefeaure
     type: NodePort
-    port: 8020
-    targetPort: 8020
+    port: 8022
+    targetPort: 8022
 
 
 deployment:

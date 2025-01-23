@@ -253,7 +253,7 @@ services:
     image: systementry-5532
     container_name: systementry-5532
     ports:
-      - 8019:8019
+      - 8021:8021
     env_file: .env
     depends_on:
       - mongo
@@ -273,7 +273,7 @@ services:
     image: nodefeaure-5532
     container_name: nodefeaure-5532
     ports:
-      - 8020:8020
+      - 8022:8022
     env_file: .env
     depends_on:
       - mongo
